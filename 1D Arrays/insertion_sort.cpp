@@ -2,6 +2,7 @@
 #include<vector>
 using namespace std;
 
+//Time Comlexity = O(N^2)
 void in_sort(vector<int> &nums){
     int n = nums.size();
     int current, prev;
