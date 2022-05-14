@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring> //header file to use the char array (C type strings)functions
+#include <algorithm> //for reverse() function
 using namespace std;
 
 int main(){
@@ -26,5 +27,8 @@ int main(){
     strcat(c, d);
     cout<<c<<endl;
 
+    //reversing a char array using reverse() function of "algorithm" file
+    reverse(a, a + strlen(a));
+    cout<<a;
     return 0;
 }
