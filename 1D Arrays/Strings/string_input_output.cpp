@@ -35,7 +35,6 @@ int main(){
     str.insert(0, 1, 'a');
     str.insert(1, 1, 'p');
     str.insert(2, 2, 'p');
-
     cout<<str;
     return 0;
 }
