@@ -55,5 +55,7 @@ int main(){
     //They are passed by reference and their name represents the address of their first element which can also be written as &arr[0].
     print(arr, n, m);  
 
+    //###
+    //In memory 2D arrays are stored linearly in either row major or column major form depending on the system.
     return 0;
 }
