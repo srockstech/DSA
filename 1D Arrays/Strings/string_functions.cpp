@@ -29,7 +29,7 @@ int main(){
     //###
     //removing a character from the end of the string
     b.pop_back();
-    
+
     cout<<b<<endl;
     cout<<b.size()<<endl;
     cout<<b.length()<<endl;
