@@ -7,7 +7,7 @@ void spiralPrint(int a[][10], int n, int m){
     int endCol = m - 1;
     int endRow = n -1;
 
-    while(strCol <= endCol || strRow <= endRow){
+    while(strCol <= endCol && strRow <= endRow){
         //Printing first row
         for(int col = strCol; col <= endCol; col++){
             cout<<a[strRow][col]<<" ";
