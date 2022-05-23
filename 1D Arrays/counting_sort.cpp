@@ -4,6 +4,7 @@ using namespace std;
 
 
 //works only in case of all positive elements
+//Time Complexity: O(n+m) where n = no. of elements and m is the biggest element
 void cnt_sort(vector<int> &nums){
     int n = nums.size();
     int maximum = INT_MIN;
