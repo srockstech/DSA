@@ -65,12 +65,30 @@ pair<int, int> maxMangoTrees(vector<vector<char>> farm){
     // }
 
     //TC: O(n^2):
-    vector<vector<char>> prefix;
+
+    vector<vector<int>> prefix(N, vector<int> (M));
+    if(farm[0][0] == '#'){
+        prefix[0][0] = 1;
+    }
+    else{
+        prefix[0][0] = 0;
+    }
+    for(int i = 1; i < N; i++){
+        for(int j = 0; j < M; j++){
+            if(farm[i][j] == '#'){
+                prefix[i][j] = 1 + prefix[i-1][j] + prefix[i][j-1] - prefix[i-1][j-1];
+            }
+            else{
+                prefix[i][j] = prefix[i-1][j] + prefix[i][j-1] - prefix[i-1][j-1];
+            }
+        }
+    }
+
     for(int i = 0; i < N; i++){
         for(int j = 0; j < M; j++){
-            sum += farm[i][j];
-            prefix.push_back(sum);
+            cout<<prefix[i][j]<<" ";
         }
+        cout<<endl;
     }
     return coordinates;
 }
@@ -97,8 +115,9 @@ int main(){
     //     }
     //     cout<<endl;
     // }
-    cout<<maxMangoTrees(farm).first<<" ";
-    cout<<maxMangoTrees(farm).second;
+    // cout<<maxMangoTrees(farm).first<<" ";
+    // cout<<maxMangoTrees(farm).second;
+    maxMangoTrees(farm);
     return 0;
 
 }
