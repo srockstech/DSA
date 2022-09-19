@@ -25,6 +25,7 @@ int main()
     int arr[] = {10, 20, 30, 40, 50, 60, 70, 89};
     int N = sizeof(arr)/sizeof(int);
     int key;
+    cout<<"Enter the element to be searched: ";
     cin>>key;
     int result = binary_search(arr, N, key);
     if(result != -1){

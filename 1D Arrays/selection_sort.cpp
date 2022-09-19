@@ -20,6 +20,8 @@ void sel_sort(vector<int> &nums){
 int main(){
     vector<int> nums = {3,64,54,64,6,6,6,8};
     sel_sort(nums);
+
+    cout<<"Sorted Array is:"<<endl;
     for(int i = 0; i < nums.size(); i++){
         cout<<nums[i]<<" ";
     }
