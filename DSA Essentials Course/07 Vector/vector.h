@@ -1,71 +1,81 @@
+template <typename T>
+class vector1{
+    T *arr;
+    int vectorSize;
+    int vectorCapacity;
 
+    public:
+    vector1(){
+        vectorSize = 0;
+        vectorCapacity = 0;
+        arr = new T[vectorCapacity];
+    }
 
-template<typename T>
-class Vector{
-	//Data Members
-	T *arr;
-	int cs;
-	int ms;
+    vector1(int capacity){
+        vectorSize = capacity;
+        vectorCapacity = capacity;
+        arr = new T[vectorCapacity];
+        for(int i = 0; i < vectorSize; i++){
+            arr[i] = 0;
+        }
+    }
 
-public:
-	Vector(int max_size=1){
-		cs = 0;
-		ms = max_size;
-		arr = new T[ms];
-	}
+    vector1(int capacity, int elementsValue){
+        vectorSize = capacity;
+        vectorCapacity = capacity;
+        arr = new T[vectorCapacity];
+        for(int i = 0; i < vectorSize; i++){
+            arr[i] = elementsValue;
+        }
+    }
 
-	void push_back(const T d){
-		//Two Cases
-		if(cs==ms){
-			//create a new array and delete the old one, double the capacity 
-			T *oldArr = arr;
-			ms = 2*ms;
-			arr = new T[ms];
-			//copy the elements
-			for(int i=0;i<cs;i++){
-				arr[i] = oldArr[i];
-			}
-			//delete 
-			delete [] oldArr;
-		
-		}
-		arr[cs] = d; 
-		cs++;
-	}
+    void push_back(T element){
+        if(vectorSize == vectorCapacity){
+            if(vectorCapacity == 0){
+                vectorCapacity = 1;
+            }
+            else{
+                vectorCapacity = 2*vectorCapacity;
+            }
+            
+            T *oldArray = arr;
+            arr = new T[vectorCapacity];
+            for(int i = 0; i < vectorSize; i++){
+                arr[i] = oldArray[i];
+            }
+            delete [] oldArray;
+        }
+        arr[vectorSize] = element;
+        vectorSize++;
+    }
 
-	void pop_back(){
-		if(cs>=0){
-			cs--;
-		}
-	}
+    void pop_back(){
+        if(vectorSize>0){
+            vectorSize--;
+        }
+    }
 
-	bool isEmpty() const{
-		return cs==0;
-	}
+    bool empty() const{
+        return vectorSize == 0;
+    }
 
-	//Front, Back, At(i), []
-	T front() const{
-		return arr[0];
-	}
+    int size() const{
+        return vectorSize;
+    }
 
-	T back() const{
-		return arr[cs-1];
-	}	
+    int capacity() const{
+        return vectorCapacity;
+    }
 
-	T at(int i) const{
-		return arr[i];
-	}
+    T front() const{
+        return arr[0];
+    }
 
-	int size() const{
-		return cs;
-	}
+    T back() const{
+        return arr[vectorSize-1];
+    }
 
-	int capacity() const{
-		return ms;
-	}
-
-	T operator[](const int i) const{
-		return arr[i];
-	}
-
+    T at(int i) const{
+        return arr[i];
+    }
 };
