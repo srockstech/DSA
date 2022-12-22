@@ -32,7 +32,7 @@ int main(){
 	cout<< v.at(2) <<endl;
 
 	cout<< v.size() <<endl; //5
-	cout<< v.capacity() <<endl; //8
+	cout<< v.capacity() <<endl; //10
 
 	for(int i=0;i<v.size();i++){
 		cout<< v[i] <<",";
