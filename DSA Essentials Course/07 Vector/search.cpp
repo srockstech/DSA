@@ -30,7 +30,7 @@ int main(){
     }
 
     //search() function (using default comparison):
-    int keySubarray[] = {2,3,4};
+    int keySubarray[] = {2,3,4}; //can be a vector instead
     vector<int>::iterator it2 = search(arr.begin(), arr.end(), keySubarray, keySubarray+3);
     
     if(it2-arr.begin() == arr.size()){
