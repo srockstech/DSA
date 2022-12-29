@@ -28,7 +28,9 @@ void clearIthBit(int &n,int i){
 	n = (n & mask);
 }
 
+//Update the bit at ith position to the given value (1 or 0)
 void updateIthBit(int &n,int i,int v){
+	//just the combination of setIthBit and clearIthBit
 	int mask;
 	if(v == 0){
 		mask = ~(1<<i);
@@ -40,31 +42,42 @@ void updateIthBit(int &n,int i,int v){
 	}
 }
 
+//Make last i bits zeros
 void clearLastIBits(int &n,int i){
+	//1111 - (n) (n = 15)
+	//1100 - (-1<<i) (i = 2) //-1 = 1111, also ~0 = 1111. Hence, any of them can be used.
+	//1100 - n & (-1<<i)
 	int mask = (-1 << i);
 	n = n & mask;
 }
 
+//clear bits from ith bit to jth bit (counting from 0)
 void clearBitsInRange(int &n,int i,int j){
-	int a = (~0)<<(j+1);
-	int b = (1<<i) - 1;
+	//11011 - n (27)
+	//10000 - a = -1<<(j+1) (j = 3)
+	//00001 - b = ~(-1<<i) (i = 1)
+	//10001 - mask = a | b
+	//11011 - n (27)
+	//10001 - mask
+	//10001 - n & mask
+	int a = -1<<(j+1);
+	int b = ~(-1<<i);
 	int mask = a|b;
 	n = n & mask;
 }
 
-
 int main(){
 
-	int n = 13;
+	int n = 27;
 	int i=1;
-	// int j=3;
+	int j=3;
 	//cin>>i;
 	// cout<<getIthBit(n,i) <<endl;
 	// setIthBit(n,i);
 	// clearIthBit(n,i);
-	updateIthBit(n,i,1);
+	// updateIthBit(n,i,1);
 	//clearLastIBits(n,i);
-	// clearBitsInRange(n,i,j);
+	clearBitsInRange(n,i,j);
 	cout << n <<endl;;
 
 
