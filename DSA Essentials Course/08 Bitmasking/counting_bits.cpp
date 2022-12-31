@@ -18,6 +18,13 @@ int count_bits(int n){
 //Counting Sets Bits : Hack  (Faster method)
 int count_bits_hack(int n){
 
+	//10001 - n (17)
+	//10000 - n-1 (16)
+	//10000 - n = n & (n-1) (17 & 16)
+	//01111 - n-1 (15)
+	//00000 - n & 15 (0)
+	//This only needs two iterations
+
 	int ans = 0;
 	while(n>0){
 		//removes the last set bit from the current number
