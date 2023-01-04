@@ -10,7 +10,6 @@ int convertToBinary(int n){
 	//1 = 1 + 0 * 10
 	//101 = 1 + 1 * 100
 	//101 = n (5) in binary
-
 	int binary = 0;
 	int power = 1;
 	while(n>0){
@@ -19,9 +18,7 @@ int convertToBinary(int n){
 		power = power*10;
 	}
 	return binary;
-
 }
-
 
 int main(){
 	int n;
