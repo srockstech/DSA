@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-
 int fib(int n){
 	//base case
 	//Here there will be two base cases since if n = 1, we are not going to call fib(0) and fib(-1).
