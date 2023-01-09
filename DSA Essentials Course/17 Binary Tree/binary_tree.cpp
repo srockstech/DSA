@@ -18,7 +18,7 @@ public:
 		left = right = NULL;
 	}
 };
-//Preorder Build of the Tree Root, Left, Right Tree
+//Preorder Build of the Tree Root, Left, Right Tree:
 Node* buildTree(){
 
 	int d;
