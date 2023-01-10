@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+//Check if the given array is sorted.
 bool isSorted(int arr[],int n){
 	//base case
 	if(n==1 or n==0){
@@ -26,7 +27,7 @@ bool isSortedTwo(int arr[],int i,int n){
 
 int main(){
 
-	int arr[] = {1,2,3,5,16,7};
+	int arr[] = {1,2,3,5,6,7};
 	int n = sizeof(arr)/sizeof(int);
 
 	cout <<isSortedTwo(arr,0,n) <<endl;
