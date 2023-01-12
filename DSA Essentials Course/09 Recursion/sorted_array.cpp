@@ -14,6 +14,7 @@ bool isSorted(int arr[],int n){
 	return false;
 }
 
+//Another method: (keeping n's value same in every call)
 bool isSortedTwo(int arr[],int i,int n){
 	if(i==n-1){
 		return true;
