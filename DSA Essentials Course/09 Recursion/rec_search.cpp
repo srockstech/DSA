@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 	
-
+//Find the index of first occurance of the given number (key) in the array.
 int firstOcc(int arr[],int n,int key){
 
 	//base case
@@ -20,7 +20,7 @@ int firstOcc(int arr[],int n,int key){
 }
 
 int lastOcc(int arr[],int n,int key){
-	//Complete this Code
+	
 	//base case
 	if(n==0){
 		return -1;
