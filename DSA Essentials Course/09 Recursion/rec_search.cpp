@@ -8,7 +8,7 @@ int firstOcc(int arr[],int n,int key){
 	if(n==0){
 		return -1;
 	}
-	//rec case
+	//recursive case
 	if(arr[0]==key){
 		return 0;
 	}
