@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-//Problem : Print all subarrays of a given array
+//Problem : Find maximum subarray sum.
 // Brute Force Approach O(N^3)
 int largestSubarraySum1(int arr[],int n){
 
