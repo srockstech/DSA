@@ -23,7 +23,12 @@ int largestSubarraySum1(int arr[],int n){
 	}
 	return largest_sum;
 }
-// Prefix Sum Approach O(N^2)
+
+// Prefix Sum Approach O(N^2):
+// Make a prefix sum array i.e, the element at ith index in this array is the sum of all the elements in the original
+// array till ith index.
+// Then prefix[j] - prefix[i-1] will give the sum of the subarray starting at ith index and ending at jth index. (when i > 0)
+// For subarrays starting at ith index, prefix[j] will be the subarray sum.
 int largestSubarraySum2(int arr[],int n){
 
 	//Prefix Sums
@@ -34,7 +39,6 @@ int largestSubarraySum2(int arr[],int n){
 		prefix[i] = prefix[i-1] + arr[i];
 	}
 
-	//largest sum login
 	int largest_sum = 0;
 
 	for(int i=0;i<n;i++){
