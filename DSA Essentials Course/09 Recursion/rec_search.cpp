@@ -8,7 +8,7 @@ int firstOcc(int arr[],int n,int key){
 	if(n==0){
 		return -1;
 	}
-	//rec case
+	//recursive case
 	if(arr[0]==key){
 		return 0;
 	}
@@ -26,7 +26,7 @@ int lastOcc(int arr[],int n,int key){
 		return -1;
 	}
 
-	//rec case 
+	//recursive case 
 	int subIndex = lastOcc(arr + 1, n - 1, key);
 	if(subIndex==-1){
 		if(arr[0]==key){
